@@ -16,10 +16,11 @@ var decodeString = function (s) {
       }
       aux = stack.pop()
       let num = ''
-      while(parseInt(+aux) >= 0 && parseInt(+aux)  <=9) {
+      while (parseInt(+aux) >= 0 && parseInt(+aux) <= 9) {
         num = aux.concat(num)
         aux = stack.pop()
       }
+      if (aux) stack.push(aux)
       sub = sub.repeat(parseInt(num))
       stack.push(...sub.split(''))
     }
